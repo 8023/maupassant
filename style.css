@@ -1,5 +1,5 @@
 /**
- * 
+ *
  * @package Maupassant
  * @author cho
  * @version 1.3
@@ -237,7 +237,6 @@ textarea {
 #secondary {
     float:right;
     width:245px;
-    border-left:1px solid #ddd;
     padding-left:35px;
     word-wrap:break-word;
     display:block;
@@ -266,6 +265,9 @@ textarea {
     text-align:left;
     display: block;
 }
+.post-category {
+    display: inline;
+}
 .post-content {
     font-size: 15px;
     line-height: 1.715;
@@ -283,6 +285,7 @@ textarea {
 }
 .post-content pre code ,.comment-content pre code {
     padding: 1.5em 2em;
+    white-space: pre;
 }
 .post-content p code, .comment-content p code {
     display:inline;
@@ -290,20 +293,67 @@ textarea {
     padding:3px 5px;
     border: 1px solid #ddd;
 }
-.post-content p {
+.post-content> p {
     margin:0 0 1.234em;
+    text-indent: 2em;
 }
+
+.post-content> table {
+    margin:0 0 1.234em;
+    font-size: 13px;
+    display: block;
+    overflow: auto;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    word-wrap: normal;
+    word-break: normal
+}
+
+.post-content> table th {
+    font-weight: 700
+}
+
+.post-content> table td,table th {
+    padding: 6px 13px;
+    white-space: nowrap;
+    border: 1px solid #ddd
+}
+
+.post-content> table tr {
+    border-top: 1px solid #ccc;
+    background-color: #fff
+}
+
+.post-content> table tr:hover {
+    background-color: #f7f7f7
+}
+
+.post-content> table thead tr {
+    background-color: #f7f7f7
+}
+
 .post-content img {
     padding:1em 0;
+    clear: both;
+    display: block;
+    margin: auto;
+}
+.post-content>ul {
+    margin:1.8em 0;
 }
 .post-content ul {
     overflow: auto;
     padding: .5em 2.4em;
     border-radius: 3px;
-    margin:1.8em 0;
+    margin:0;
 }
 .post-content ul li{
     text-indent: .5em;
+}
+.post-content ul li p{
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 .archive-title {
     padding-top:20px;
@@ -322,28 +372,23 @@ textarea {
 .page-navigator {
     border-top:1px solid #ddd;
     list-style:none;
-    padding:25px 0 0;
+    padding:0;
     font-size:16px;
 }
 .page-navigator li {
     display:inline-block;
-    margin:0 5px 5px 0;
+    margin:0;
 }
 .page-navigator a {
     display:inline-block;
-    padding:0 10px;
     height:25px;
     line-height:25px;
-    padding:5px 9px;
-    border:1px solid #DDD;
-}
-.page-navigator a:hover {
-    background:#F8F8F8;
-    border-bottom-color:#D26911;
+    padding:6px 10px;
+    margin: -1px 0 10px;
 }
 .page-navigator .current a {
-    background:#F8F8F8;
-    border-bottom-color:#D26911;
+    border: 1px solid #ddd;
+    border-top: 1px solid #fff;
 }
 .comment-list, .comment-list ol {
     list-style:none;
@@ -354,8 +399,11 @@ textarea {
     margin-top:-1px;
 }
 .comment-list li {
-    padding:22px 0 0;
-    border-top:1px solid #ddd;
+    padding-top:2em;
+}
+.comment-children {
+    padding-left:2em;
+    border-left:1px solid #ddd;
 }
 .comment-list li.comment-level-even {
     background:#FFF;
@@ -519,7 +567,7 @@ textarea.textarea {
 }
 .post-content hr, .comment-content hr {
     margin:2.1em auto;
-    width:200px;
+    width:75%;
     border:1px solid #ccc;
     border-width:1px 0 0 0;
     position: relative;
@@ -680,6 +728,7 @@ img.alignright {
     }
     #nav-menu {
         margin:35px 0 -1px;
+        float: none;
     }
     .res-cons {
         width:auto;
@@ -687,6 +736,9 @@ img.alignright {
     }
     #secondary {
         display:none;
+    }
+    .page-navigator {
+        text-align: center;
     }
 }
 @media print, screen and (max-width:680px) {
@@ -696,14 +748,11 @@ img.alignright {
     .post-title {
         font-size:22px;
     }
-    .page-navigator {
-        padding:15px 0 0;
-    }
     #footer {
         padding-top:10px;
     }
     .page-navigator a {
-        padding:0 6px;
+        padding:4px 8px;
     }
     .post-content img {
         padding:0.2em 0;
