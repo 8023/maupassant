@@ -30,16 +30,16 @@ function themeConfig($form) {
     );
     $form->addInput($analyticsCode);
 
-    $fastClick = new Typecho_Widget_Helper_Form_Element_Radio(
-        'fastClick',
-        array('able' => _t('启用'),
-            'disable' => _t('禁止'),
-        ),
-        'disable',
-        _t('移动端点击延迟消除'),
-        _t('禁止网页缩放以消除单击延迟.')
-    );
-    $form->addInput($fastClick);
+    // $fastClick = new Typecho_Widget_Helper_Form_Element_Radio(
+    //     'fastClick',
+    //     array('able' => _t('启用'),
+    //         'disable' => _t('禁止'),
+    //     ),
+    //     'disable',
+    //     _t('移动端点击延迟消除'),
+    //     _t('禁止网页缩放以消除单击延迟.')
+    // );
+    // $form->addInput($fastClick);
 
     $highlightjs = new Typecho_Widget_Helper_Form_Element_Radio(
         'highlightjs',

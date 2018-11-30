@@ -61,7 +61,7 @@
             <li><a href="<?php $this->options->feedUrl(); ?>"><?php _e('文章 RSS'); ?></a></li>
             <li><a href="<?php $this->options->commentsFeedUrl(); ?>"><?php _e('评论 RSS'); ?></a></li>
             <li><a target="_blank" href="<?php $this->options->siteUrl(); ?>humans.txt">感谢</a></li>
-            <li><a target="_blank" href="//donate.0x8023.com">捐助</a></li>
+            <li><a target="_blank" href="//0x8023.org/donate">捐助</a></li>
         </ul>
     </section>
     <?php endif; ?>

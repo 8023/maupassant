@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="zh-Hans">
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
@@ -7,6 +7,12 @@
 <!--[if !IE]> <html class="no-js"> <![endif]-->
 <head>
     <meta charset="<?php $this->options->charset(); ?>" />
+    <meta name="theme-color" content="#fff">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="dns-prefetch" href="//ajax.cloudflare.com" />
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    <link rel="dns-prefetch" href="//creativecommons.org" />
     <title><?php
         $this->archiveTitle(array(
             'category'  =>  _t('分类 %s 下的文章'),
@@ -17,21 +23,18 @@
         $this->options->title();
     ?></title>
     <!--[if lt IE 9]>
-    <script type="text/javascript" src="<?php $this->options->themeUrl('javascript/html5shiv.js'); ?>"></script>
+    <script type="text/javascript" src="<?php $this->options->themeUrl('javascript/html5shiv.min.js'); ?>"></script>
     <![endif]-->
     <link rel="stylesheet" href="<?php $this->options->adminUrl('css/normalize.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('style.css'); ?>">
-    <link rel="author" href="humans.txt" />
+    <?php $this->header("generator=&template=&"); ?>
     <?php if ($this->options->highlightjs == 'able'): ?>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <?php endif; ?>
-    <?php if ($this->options->fastClick == 'able'): ?>
-    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
-    <?php endif; ?>
-    <?php $this->header("generator=&template=&"); ?>
     <?php if($this->options->analyticsCode) $this->options->analyticsCode(); ?>
+    <link rel="author" href="humans.txt" />
 </head>
 <body>
 
